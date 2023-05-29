@@ -1,3 +1,4 @@
+import sys
 from time import sleep
 
 from selenium import webdriver  # pip install selenium
@@ -8,7 +9,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from webdriver_manager.chrome import \
     ChromeDriverManager  # pip install webdriver-manager
-
 
 options = webdriver.ChromeOptions()
 options.page_load_strategy = 'eager'
@@ -28,7 +28,7 @@ options.add_experimental_option('excludeSwitches', ['enable-logging'])
 def exitBrowser():
     input("Press any key to exit...")
     driver.quit()
-    exit()
+    sys.exit()
 
 
 def login(username):
